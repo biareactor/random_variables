@@ -35,9 +35,9 @@ static void set_axes(QAbstractAxis* axisX, QAbstractAxis* axisY, QString label1,
 
 double Gamma(double a)
 {
-    if (a == 1)
+    if (std::abs(a - 1) < 1e-10)
         return 1;
-    if (a == 1/2)
+    if (std::abs(a - 0.5) < 1e-10)
         return qSqrt(M_PI);
     return ((a - 1) * Gamma(a - 1));
 }
